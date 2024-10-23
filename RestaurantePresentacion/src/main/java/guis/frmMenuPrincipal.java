@@ -46,13 +46,14 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         miAdministrar = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        miCrearReser = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        miCancelarRese = new javax.swing.JMenuItem();
+        miHistorial = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
+        miRegistrarCliente = new javax.swing.JMenuItem();
+        miEliminarCliente = new javax.swing.JMenuItem();
+        miGenerarRe = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
 
@@ -136,15 +137,14 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
-                        .addComponent(jLabel2))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(187, 187, 187)
+                    .addComponent(jLabel3)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(61, 61, 61)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -187,32 +187,55 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Reservaciones");
+        miCrearReser.setText("Reservaciones");
 
-        jMenuItem3.setText("jMenuItem3");
-        jMenu2.add(jMenuItem3);
+        jMenuItem3.setText("Crear reservacion");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        miCrearReser.add(jMenuItem3);
 
-        jMenuItem4.setText("jMenuItem4");
-        jMenu2.add(jMenuItem4);
+        miCancelarRese.setText("Cancelar reservacion");
+        miCancelarRese.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miCancelarReseActionPerformed(evt);
+            }
+        });
+        miCrearReser.add(miCancelarRese);
 
-        jMenuItem5.setText("jMenuItem5");
-        jMenu2.add(jMenuItem5);
+        miHistorial.setText("Historial");
+        miHistorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miHistorialActionPerformed(evt);
+            }
+        });
+        miCrearReser.add(miHistorial);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(miCrearReser);
 
         jMenu3.setText("Clientes");
 
-        jMenuItem7.setText("jMenuItem7");
-        jMenu3.add(jMenuItem7);
+        miRegistrarCliente.setText("Registrar cliente");
+        jMenu3.add(miRegistrarCliente);
+
+        miEliminarCliente.setText("Eliminar cliente");
+        miEliminarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miEliminarClienteActionPerformed(evt);
+            }
+        });
+        jMenu3.add(miEliminarCliente);
 
         jMenuBar1.add(jMenu3);
 
-        jMenu4.setText("Reportes");
+        miGenerarRe.setText("Reportes");
 
-        jMenuItem6.setText("jMenuItem6");
-        jMenu4.add(jMenuItem6);
+        jMenuItem6.setText("Generar reporte");
+        miGenerarRe.add(jMenuItem6);
 
-        jMenuBar1.add(jMenu4);
+        jMenuBar1.add(miGenerarRe);
 
         jMenu5.setText("Acerca De");
         jMenuBar1.add(jMenu5);
@@ -240,8 +263,69 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void miAdministrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAdministrarActionPerformed
-        // TODO add your handling code here:
+       // Crear una instancia del nuevo frame
+    frmAdminMesas nuevoFrame = new frmAdminMesas();
+    
+    // Mostrar el nuevo frame
+    nuevoFrame.setVisible(true);
+    
+    // Ocultar el frame actual
+    this.setVisible(false);
+    
+    
+       dispose(); // Cierra el frame actual
+
     }//GEN-LAST:event_miAdministrarActionPerformed
+
+    private void miEliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miEliminarClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_miEliminarClienteActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+     
+        // Crear una instancia del nuevo frame
+     frmCrearReservacion nuevoFrame = new  frmCrearReservacion();
+    
+    // Mostrar el nuevo frame
+    nuevoFrame.setVisible(true);
+    
+    // Ocultar el frame actual
+    this.setVisible(false);
+    
+    
+       dispose(); // Cierra el frame actual
+        
+              
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void miCancelarReseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miCancelarReseActionPerformed
+       
+        // Crear una instancia del nuevo frame
+     frmCancelacionReserva nuevoFrame = new  frmCancelacionReserva();
+    
+    // Mostrar el nuevo frame
+    nuevoFrame.setVisible(true);
+    
+    // Ocultar el frame actual
+    this.setVisible(false);
+    
+    
+       dispose(); // Cierra el frame actual        
+    }//GEN-LAST:event_miCancelarReseActionPerformed
+
+    private void miHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miHistorialActionPerformed
+        // Crear una instancia del nuevo frame
+     frmHistorial nuevoFrame = new  frmHistorial();
+    
+    // Mostrar el nuevo frame
+    nuevoFrame.setVisible(true);
+    
+    // Ocultar el frame actual
+    this.setVisible(false);
+    
+    
+       dispose(); // Cierra el frame actual    
+    }//GEN-LAST:event_miHistorialActionPerformed
 
     /**
      * @param args the command line arguments
@@ -290,17 +374,12 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextField1;
@@ -308,5 +387,11 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lblCantMID;
     private javax.swing.JLabel lblCantSmallTable;
     private javax.swing.JMenuItem miAdministrar;
+    private javax.swing.JMenuItem miCancelarRese;
+    private javax.swing.JMenu miCrearReser;
+    private javax.swing.JMenuItem miEliminarCliente;
+    private javax.swing.JMenu miGenerarRe;
+    private javax.swing.JMenuItem miHistorial;
+    private javax.swing.JMenuItem miRegistrarCliente;
     // End of variables declaration//GEN-END:variables
 }

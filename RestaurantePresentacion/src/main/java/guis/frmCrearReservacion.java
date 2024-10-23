@@ -188,6 +188,11 @@ public class frmCrearReservacion extends javax.swing.JFrame {
         jButton1.setText("Completar Reservacion");
 
         jButton2.setText("Cancelar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -254,6 +259,21 @@ public class frmCrearReservacion extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+      // Crear una instancia del nuevo frame
+    frmMenuPrincipal nuevoFrame = new frmMenuPrincipal();
+    
+    // Mostrar el nuevo frame
+    nuevoFrame.setVisible(true);
+    
+    // Ocultar el frame actual
+    this.setVisible(false);
+    
+    
+       dispose(); // Cierra el frame actual
+
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -59,6 +59,11 @@ public class frmGenerarReportes extends javax.swing.JFrame {
         jLabel5.setText("Fecha fin");
 
         jButton1.setText("Volver");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Generar");
 
@@ -136,6 +141,21 @@ public class frmGenerarReportes extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // Crear una instancia del nuevo frame
+    frmMenuPrincipal nuevoFrame = new frmMenuPrincipal();
+    
+    // Mostrar el nuevo frame
+    nuevoFrame.setVisible(true);
+    
+    // Ocultar el frame actual
+    this.setVisible(false);
+    
+    
+       dispose(); // Cierra el frame actual
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

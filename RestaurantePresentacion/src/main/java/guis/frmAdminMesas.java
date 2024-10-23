@@ -58,6 +58,11 @@ public class frmAdminMesas extends javax.swing.JFrame {
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         Cancelar.setText("Cancelar");
+        Cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelarActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Registrar");
 
@@ -149,6 +154,21 @@ public class frmAdminMesas extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
+     // Crear una instancia del nuevo frame
+    frmMenuPrincipal nuevoFrame = new frmMenuPrincipal();
+    
+    // Mostrar el nuevo frame
+    nuevoFrame.setVisible(true);
+    
+    // Ocultar el frame actual
+    this.setVisible(false);
+    
+    
+       dispose(); // Cierra el frame actual
+
+    }//GEN-LAST:event_CancelarActionPerformed
 
     /**
      * @param args the command line arguments
